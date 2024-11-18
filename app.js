@@ -9,6 +9,11 @@ app.get("/user/:id", (req, res) => {
    res.send(`User id is ${userId}`);
 });
 
+app.get('/search', (req, res) =>{
+  const query = req.query.q;
+  res.send(`The query search term is ${query}`);
+});
+
 app.listen(PORT, () => {
    console.log(`Server started on ${PORT}`);
 });  
