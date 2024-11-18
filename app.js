@@ -5,13 +5,15 @@ const PORT = 3000;
 //Middleware
 app.use(express.json());
 app.use((req, res, next) =>{
-   console.log(`This works first`);
+   console.log(`This works first`); //middleware for logging,auth,parsing,etc.
    next();
 });
 
-app.get('/', (req, res) =>{
- console.log("This works second");
-});
+//app.post('/create', (req, res) =>{
+   //const userData = req.body;
+   //const JSON = JSON.stringify(userData)
+  // res.send(`User data received: ${JSON}`);
+//});
 
 app.get("/user/:id", (req, res) => {
    const userId = req.params.id;
